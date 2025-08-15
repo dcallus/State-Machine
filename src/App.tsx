@@ -1,17 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import DemoApp from './DemoApp'
+import FlowRunner from "./FlowRunner";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <DemoApp />
-    </>
-  )
+    <FlowRunner
+      showInspector
+      specs={[
+        { name: "Init", to: ["InProgress"] },
+        { name: "InProgress", to: ["With Client", "Complete", "Failed"] },
+        { name: "With Client", to: ["InProgress"] },
+        { name: "Complete", to: [], terminal: true },
+        { name: "Failed", to: [], terminal: true },
+      ]}
+    />
+  );
 }
-
-export default App
