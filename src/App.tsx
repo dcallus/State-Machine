@@ -6,10 +6,10 @@ export default function App() {
       showInspector
       specs={[
         { name: "Init", to: ["InProgress"] },
-        { name: "InProgress", to: ["With Client", "Complete", "Failed"] },
+        { name: "InProgress", to: ["With Client", "Complete: Fixed", "Complete: Issue Raised"] },
         { name: "With Client", to: ["InProgress"] },
-        { name: "Complete", to: [], terminal: true },
-        { name: "Failed", to: [], terminal: true },
+        { name: "Complete: Fixed", to: [], terminal: true },
+        { name: "Complete: Issue Raised", to: [], terminal: true },
       ]}
     />
   );
